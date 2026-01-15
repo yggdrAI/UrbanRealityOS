@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #020617;
+  color: white;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: hidden;
+}
+
+/* Hide scrollbars globally */
+html, body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* ===== DARK THEME MAP POPUP ===== */
+.maplibregl-popup {
+  z-index: 1100; /* below controls which we set higher */
+}
+.maplibregl-popup-content {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+.maplibregl-popup-tip {
+  display: none !important;
+}
+
+/* Ensure navigation and other controls sit above popups so they never get obscured */
+.maplibregl-ctrl {
+  z-index: 1200 !important;
+}
+
+/* Small responsive tweak: make popups max-width so content wraps nicely */
+.maplibregl-popup-content > div {
+  max-width: 340px;
+}
